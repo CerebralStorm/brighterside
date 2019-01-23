@@ -1,11 +1,16 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { Switch, Route, BrowserRouter } from 'react-router-dom'
-import { Provider } from 'react-redux'
-import store from '../store'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from '../store';
+import $ from 'jquery';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap';
 
 import App from '../components/app'
 import Index from '../components/index'
+
 // import Shop from '../components/shop'
 // import Product from '../components/products/product'
 // import Cart from '../components/cart'

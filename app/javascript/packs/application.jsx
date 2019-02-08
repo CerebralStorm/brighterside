@@ -5,13 +5,14 @@ import { Provider } from 'react-redux';
 import store from '../store';
 import $ from 'jquery';
 
+import '../assets/stylesheets/colors'
+import '../assets/stylesheets/global'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/stylesheets/animate.css';
 import '../assets/stylesheets/classy-nav.css';
 import '../assets/stylesheets/elegant-icon.css';
 import '../assets/stylesheets/font-awesome.min.css';
 import '../assets/stylesheets/magnific-popup.css';
-// import '../assets/stylesheets/owl.carousel.min.css';
 
 import 'bootstrap/dist/js/bootstrap';
 

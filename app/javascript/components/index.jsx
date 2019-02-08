@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../assets/images/web2.png'
 import Hero from './hero'
 import Service from './service'
 import About from './about'

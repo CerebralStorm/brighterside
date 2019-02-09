@@ -113,26 +113,25 @@ class Footer extends React.Component {
 
               <div className="col-12 col-md-6">
                 <div className="copywrite-text">
-                  <p>&copy;
-                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i className="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-
-                  </p>
+                  <p>&copy; Copyright 2019 | All rights reserved</p>
                 </div>
               </div>
 
               <div className="col-12 col-md-6">
-                <div className="footer-nav">
-                  <nav>
-                    <ul>
-                      <li><a href="#">Home</a></li>
-                      <li><a href="#">About</a></li>
-                      <li><a href="#">Service</a></li>
-                      <li><a href="#">Portfolio</a></li>
-                      <li><a href="#">Blog</a></li>
-                      <li><a href="#">Contact</a></li>
-                    </ul>
-                  </nav>
-                </div>
+                <ul class="nav justify-content-center">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#">Active</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

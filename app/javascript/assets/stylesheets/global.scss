@@ -1,16 +1,36 @@
+@import 'colors';
+
+// main styles
+
 #main-content {
-  margin-top: 180px;
+  margin-top: 160px;
 }
 
 #main-navbar {
-  height: 160px;
+  height: 140px;
   display: block;
 }
 
 #main-contact-info {
-  height: 20px;
+  height: 15px;
+  font-size: 14px;
 }
 
 #navbar-logo{
   height: 60px;
+}
+
+.jumbotron {
+  background-color: $gray !important;
+  color: $white;
+}
+
+
+//buttons
+.btn {
+  border-radius: 22.5px !important;
+  border: 0px !important;
+}
+.btn-primary {
+  background-color: $turquoise !important;
 }

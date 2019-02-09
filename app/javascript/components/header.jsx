@@ -29,8 +29,8 @@ class Header extends React.Component {
     return (
       <header>
         <nav id='main-navbar' className="navbar fixed-top navbar-expand-lg justify-content-between navbar-light bg-light">
-          <div className='container'>
-            <ul id='main-contact-info' className="navbar-nav mr-auto">
+          <div id='main-contact-info' className='container'>
+            <ul className="navbar-nav mr-auto mt-2">
               <li className="nav-item">
                 <a className="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="infodeercreative@gmail.com"><i className="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: infodeercreative@gmail.com</span></a>
               </li>
@@ -38,12 +38,12 @@ class Header extends React.Component {
                 <a className="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i className="fa fa-phone" aria-hidden="true"></i> <span>Call Us: +1 234 122 122</span></a>
               </li>
             </ul>
-            <ul className='navbar-nav ml-auto'>
+            <ul className='navbar-nav ml-auto mt-2'>
               <li className="nav-item">
-                <a className="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122">Login</a>
+                <a className="nav-link" href="#">Login</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122">Cart</a>
+                <a className="nav-link" href="#">Cart</a>
               </li>
             </ul>
           </div>

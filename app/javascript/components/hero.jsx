@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../assets/images/9.png'
+import logo from '../assets/images/11.png'
 
 class Hero extends React.Component {
   render() {

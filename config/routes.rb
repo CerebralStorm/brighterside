@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
 
+  get '/unauthorized', to: 'static#index', as: :unauthorized
+
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       resources :products

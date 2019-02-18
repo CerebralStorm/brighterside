@@ -28,8 +28,8 @@ import Index from '../components/index'
 // import Order from '../components/order'
 // import Checkout from '../components/cart/checkout'
 // import CheckoutConfirmation from '../components/cart/checkout_confirmation'
-// import NotFound from '../components/not_found'
-// import Unauthorized from '../components/unauthorized'
+import NotFound from '../components/not_found'
+import Unauthorized from '../components/unauthorized'
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
@@ -38,6 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
         <App>
           <Switch>
             <Route exact path="/" component={Index}/>
+            <Route exact path="/unauthorized" component={Unauthorized}/>
+            <Route component={NotFound} />
           </Switch>
         </App>
       </BrowserRouter>

@@ -4,7 +4,7 @@ import logo from '../assets/images/9.png'
 class Hero extends React.Component {
   render() {
     return (
-      <section className="container">
+      <section id='hero-unit' className="container">
         <div className="jumbotron mr-auto ml-auto">
           <img id='hero-logo' className="img-fluid ml-auto mx-auto d-block" src={logo} />
           <h1 className="display-4 text-center">Welcome to The Brighter Side</h1>

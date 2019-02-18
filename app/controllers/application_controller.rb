@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-
   def js_env(opts = {})
     @js_env ||= {}
     @js_env[:params] = params.except('action', 'controller')
@@ -10,5 +9,4 @@ class ApplicationController < ActionController::Base
     @js_env
   end
   helper_method :js_env
-
 end

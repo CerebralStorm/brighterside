@@ -5,6 +5,7 @@ AllCops:
     - 'bin/**/*'
     - 'node_modules/**/*'
     - 'vendor/**/*'
+    - 'config/**/*'
 Metrics/LineLength:
   Max: 120
 Style/Documentation:
@@ -12,7 +13,6 @@ Style/Documentation:
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
-    - 'config/**/*'
 Style/FrozenStringLiteralComment:
   Enabled: false
 Style/SymbolArray:

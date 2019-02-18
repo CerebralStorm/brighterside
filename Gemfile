@@ -8,19 +8,22 @@ ruby '2.5.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'cancancan'
+gem 'carrierwave'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'devise_token_auth'
 gem 'jbuilder', '~> 2.5'
+gem 'omniauth'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.2'
+gem 'rails_admin'
 gem 'rubocop'
 gem 'sass-rails', '~> 5.0'
+gem 'stripe'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
-gem 'omniauth'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

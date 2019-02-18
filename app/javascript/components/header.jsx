@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../assets/images/web2.png'
+import logo from '../assets/images/1.png'
 // import { loadCart } from '../actions/cart'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
@@ -63,9 +63,6 @@ class Header extends React.Component {
                 </li>
                 <li className="nav-item mr-4">
                   <a className="nav-link" href="#">Blog</a>
-                </li>
-                <li className="nav-item mr-4">
-                  <a className="nav-link" href="#">Testimonials</a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">Contact</a>

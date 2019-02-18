@@ -118,18 +118,18 @@ class Footer extends React.Component {
               </div>
 
               <div className="col-12 col-md-6">
-                <ul class="nav justify-content-center">
-                  <li class="nav-item">
-                    <a class="nav-link active" href="#">Active</a>
+                <ul className="nav justify-content-center">
+                  <li className="nav-item">
+                    <a className="nav-link active" href="#">Active</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">Link</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">Link</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
+                  <li className="nav-item">
+                    <a className="nav-link disabled" href="#">Disabled</a>
                   </li>
                 </ul>
               </div>

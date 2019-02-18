@@ -12,7 +12,6 @@ import Contact from './contact'
 // import { loadProducts } from '../actions/product'
 import { connect } from 'react-redux'
 // import ProductTile from './products/product_tile'
-import { EmailSignUpForm, EmailSignInForm } from "redux-auth/bootstrap-theme";
 
 class Index extends React.Component {
   componentDidMount() {
@@ -22,8 +21,6 @@ class Index extends React.Component {
   render() {
     return (
       <div>
-        <EmailSignUpForm />
-        <EmailSignInForm />
         <Hero />
         <Service />
         <About />

@@ -9,6 +9,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <script>ENV = <%= js_env.to_json.html_safe %>;</script>
     <%= stylesheet_pack_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </head>

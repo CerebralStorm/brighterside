@@ -3,8 +3,8 @@ FactoryBot.define do
     user_id { 1 }
     order_id { 1 }
     amount { 1.5 }
-    stripe_customer { "MyString" }
-    currency { "MyString" }
-    description { "MyString" }
+    stripe_customer { 'MyString' }
+    currency { 'MyString' }
+    description { 'MyString' }
   end
 end

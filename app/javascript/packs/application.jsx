@@ -18,22 +18,12 @@ import 'bootstrap/dist/js/bootstrap';
 
 import App from '../components/app'
 import Index from '../components/index'
-import SignUp from '../components/sign_up'
-import Login from '../components/login'
-import ConfirmUser from '../components/confirm_user'
-import UserConfirmed from '../components/user_confirmed'
-
-// import Shop from '../components/shop'
-// import Product from '../components/products/product'
-// import Cart from '../components/cart'
-// import Gallery from '../components/gallery'
-// import Contact from '../components/contact'
-// import Account from '../components/account'
-// import Order from '../components/order'
-// import Checkout from '../components/cart/checkout'
-// import CheckoutConfirmation from '../components/cart/checkout_confirmation'
+import SignUp from '../components/auth/sign_up'
+import Login from '../components/auth/login'
+import ConfirmUser from '../components/auth/confirm_user'
+import UserConfirmed from '../components/auth/user_confirmed'
 import NotFound from '../components/not_found'
-import Unauthorized from '../components/unauthorized'
+import Unauthorized from '../components/auth/unauthorized'
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(

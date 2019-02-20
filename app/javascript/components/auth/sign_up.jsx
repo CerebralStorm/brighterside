@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { UserApi } from '../api/user_api'
+import { UserApi } from '../../api/user_api'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router';
 
-class Login extends React.Component {
+class SignUp extends React.Component {
   constructor(props) {
     super(props)
 
@@ -12,22 +12,21 @@ class Login extends React.Component {
 
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      passwordConfirmation: ''
     }
   }
 
   handleSubmit(event) {
     event.preventDefault()
-    UserApi.login(this.state).then(response => {
-      console.log(response)
-      console.log(this.props)
+    UserApi.signUp(this.state).then(response => {
+      this.setState({ redirectToConfirmation: true } )
     })
   }
 
   render() {
-    const { isAuthenticated } = this.props
-    if (isAuthenticated) {
-      return <Redirect to="/" />
+    if (this.state.redirectToConfirmation) {
+      return <Redirect to="/confirm_user" />
     }
     return (
       <div className='container'>
@@ -35,7 +34,7 @@ class Login extends React.Component {
           <div className="row">
             <div className="col-md-3"></div>
             <div className="col-md-6">
-              <h2>Login</h2>
+              <h2>Register New User</h2>
               <hr />
             </div>
           </div>
@@ -80,9 +79,24 @@ class Login extends React.Component {
               </div>
             </div>
             <div className="row">
+              <div className="col-md-3 field-label-responsive">
+                <label htmlFor="password">Confirm Password</label>
+              </div>
+              <div className="col-md-6">
+                <div className="form-group">
+                  <div className="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div className="input-group-addon">
+                      <i className="fa fa-repeat"></i>
+                    </div>
+                    <input type="password" name="password-confirmation" className="form-control" id="password-confirm" placeholder="Password" required value={this.state.passwordConfirmation} onChange={(e) => this.setState({ passwordConfirmation: e.target.value })} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="row">
               <div className="col-md-3"></div>
               <div className="col-md-6">
-                <button type="submit" className="btn btn-success" onClick={this.handleSubmit}><i className="fa fa-user-plus"></i> Submit</button>
+                <button type="submit" className="btn btn-success" onClick={this.handleSubmit}><i className="fa fa-user-plus"></i> Register</button>
               </div>
             </div>
         </form>
@@ -98,5 +112,5 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(Login)
-export { Login };
+export default connect(mapStateToProps)(SignUp)
+export { SignUp };

@@ -1,7 +1,6 @@
 module Api
   module V1
     class ChargesController < ApplicationController
-      skip_before_action :authenticate_user!
 
       def create
         charge = StripeChargesServices.new(charges_params, current_user).call

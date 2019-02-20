@@ -32,15 +32,18 @@ class Header extends React.Component {
           <div id='main-contact-info' className='container'>
             <ul className="navbar-nav mr-auto mt-2">
               <li className="nav-item">
-                <a className="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="infodeercreative@gmail.com"><i className="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: infodeercreative@gmail.com</span></a>
+                <a className="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="info@shopbrighterside.com"><i className="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: info@shopbrighterside.com</span></a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="+1 234 122 122"><i className="fa fa-phone" aria-hidden="true"></i> <span>Call Us: +1 234 122 122</span></a>
+                <a className="nav-link" href="#" data-toggle="tooltip" data-placement="bottom" title="+1 801 123 1234"><i className="fa fa-phone" aria-hidden="true"></i> <span>Call Us: +1 801 123 1234</span></a>
               </li>
             </ul>
             <ul className='navbar-nav ml-auto mt-2'>
               <li className="nav-item">
-                <a className="nav-link" href="#">Login</a>
+                <Link to={'/sign_up'} className="nav-link">Sign Up</Link>
+              </li>
+              <li className="nav-item">
+                <Link to={'/login'} className="nav-link">Login</Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">Cart</a>
@@ -49,7 +52,7 @@ class Header extends React.Component {
           </div>
           <hr />
           <div className='container'>
-            <a id='main-logo-brand' className="navbar-brand" href="#"><img id='navbar-logo' src={logo} /></a>
+            <Link to={'/'} id='main-logo-brand' className="navbar-brand"><img id='navbar-logo' src={logo} /></Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>

@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!
+  include DeviseTokenAuth::Concerns::SetUserByToken
 
   rescue_from CanCan::AccessDenied do |_exception|
     redirect_to '/unauthorized'

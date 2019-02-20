@@ -18,6 +18,8 @@ import 'bootstrap/dist/js/bootstrap';
 
 import App from '../components/app'
 import Index from '../components/index'
+import SignUp from '../components/sign_up'
+import Login from '../components/login'
 
 // import Shop from '../components/shop'
 // import Product from '../components/products/product'
@@ -38,6 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
         <App>
           <Switch>
             <Route exact path="/" component={Index}/>
+            <Route exact path="/sign_up" component={SignUp}/>
+            <Route exact path="/login" component={Login}/>
             <Route exact path="/unauthorized" component={Unauthorized}/>
             <Route component={NotFound} />
           </Switch>

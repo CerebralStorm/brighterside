@@ -20,15 +20,13 @@ class SignUp extends React.Component {
   handleSubmit(event) {
     event.preventDefault()
     UserApi.signUp(this.state).then(response => {
-      console.log(response)
-      console.log(this.props)
+      this.setState({ redirectToConfirmation: true } )
     })
   }
 
   render() {
-    const { isAuthenticated } = this.props
-    if (isAuthenticated) {
-      return <Redirect to="/" />
+    if (this.state.redirectToConfirmation) {
+      return <Redirect to="/confirm_user" />
     }
     return (
       <div className='container'>

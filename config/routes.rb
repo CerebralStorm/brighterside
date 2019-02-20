@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get '/unauthorized', to: 'static#index', as: :unauthorized
   get '/sign_up', to: 'static#index'
   get '/login', to: 'static#index'
+  get '/user_confirmed', to: 'static#index'
+  get '/confirm_user', to: 'static#index'
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do

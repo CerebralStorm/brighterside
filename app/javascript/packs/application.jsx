@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <Route exact path="/confirm_user" component={ConfirmUser}/>
             <Route exact path="/user_confirmed" component={UserConfirmed}/>
             <Route exact path="/unauthorized" component={Unauthorized}/>
+            <Route exact path="/404" component={NotFound}/>
             <Route component={NotFound} />
           </Switch>
         </App>

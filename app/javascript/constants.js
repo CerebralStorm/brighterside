@@ -6,6 +6,8 @@ const constants = {
   LOAD_CART: 'LOAD_CART',
   LOAD_ORDERS: 'LOAD_ORDERS',
   LOAD_ORDER: 'LOAD_ORDER',
+  LOAD_USER: 'LOAD_USER',
+  CLEAR_USER: 'CLEAR_USER',
 }
 
 export { constants };

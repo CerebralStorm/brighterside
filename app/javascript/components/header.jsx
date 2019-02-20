@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../assets/images/1.png'
 // import { loadCart } from '../actions/cart'
+import { signOut } from '../actions/user'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -39,6 +40,11 @@ class Header extends React.Component {
               </li>
             </ul>
             <ul className='navbar-nav ml-auto mt-2'>
+              {this.props.currentUser.id &&
+                <li className="nav-item">
+                  <a className="nav-link" onClick={(e) => { this.props.dispatch(signOut()) }} >Sign out</a>
+                </li>
+              }
               <li className="nav-item">
                 <Link to={'/sign_up'} className="nav-link">Sign Up</Link>
               </li>

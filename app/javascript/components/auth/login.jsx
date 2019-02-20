@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { UserApi } from '../../api/user_api'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router';
+import { login } from '../../actions/user'
 
 class Login extends React.Component {
   constructor(props) {
@@ -18,15 +19,12 @@ class Login extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    UserApi.login(this.state).then(response => {
-      console.log(response)
-      console.log(this.props)
-    })
+    this.props.dispatch(login(this.state))
   }
 
   render() {
-    const { isAuthenticated } = this.props
-    if (isAuthenticated) {
+    console.log(this.props)
+    if (this.props.currentUser.id) {
       return <Redirect to="/" />
     }
     return (

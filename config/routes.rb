@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get '/user_confirmed', to: 'static#index'
   get '/confirm_user', to: 'static#index'
 
+  match "/404", :to => "static#index", :via => :all
+
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       resources :products

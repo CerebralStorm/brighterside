@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../assets/images/1.png'
+import logo from '../assets/images/2.png'
 import { loadCart } from '../actions/cart'
 import { signOut } from '../actions/user'
 import { Link } from 'react-router-dom'

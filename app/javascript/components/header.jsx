@@ -15,6 +15,7 @@ class Header extends React.Component {
 
   componentDidMount() {
     this.props.dispatch(currentUser())
+    this.props.dispatch(loadCart())
   }
 
   cartCount() {
@@ -24,6 +25,7 @@ class Header extends React.Component {
         quantity += item.quantity
       })
     }
+    return quantity;
   }
 
   render() {
@@ -31,6 +33,7 @@ class Header extends React.Component {
     console.log('uid:', Cookies.get('uid'))
     console.log('client:', Cookies.get('client'))
     console.log('expiry:', Cookies.get('expiry'))
+    console.log(this.props.cart)
 
     return (
       <header>
@@ -57,7 +60,7 @@ class Header extends React.Component {
                 <Link to={'/login'} className="nav-link">Login</Link>
               </li>
               <li className="nav-item">
-                <Link to={'/cart'} className="nav-link">Cart</Link>
+                <Link to={'/cart'} className="nav-link">Cart ({this.cartCount()})</Link>
               </li>
             </ul>
           </div>

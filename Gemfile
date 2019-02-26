@@ -33,6 +33,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'factory_bot_rails'
   gem 'pry'
+  gem 'rb-readline'
   gem 'rspec-rails', '~> 3.8'
   gem 'rubocop-rspec'
   gem 'simplecov'

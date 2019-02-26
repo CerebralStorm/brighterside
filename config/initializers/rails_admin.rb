@@ -11,7 +11,12 @@ RailsAdmin.config do |config|
 
   ## == Cancan ==
   config.authorize_with do
-    redirect_to '/unauthorized' unless current_user.roles.include?(:admin)
+    if Rails.env.production?
+      authenticate_or_request_with_http_basic('Login required') do |username, password|
+        username == ENV['ADMIN_USERNAME'] &&
+        password == ENV['ADMIN_PASSWORD']
+      end
+    end
   end
 
   # config.authorize_with :cancancan

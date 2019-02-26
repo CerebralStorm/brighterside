@@ -22,6 +22,10 @@ import SignUp from '../components/auth/sign_up'
 import Login from '../components/auth/login'
 import ConfirmUser from '../components/auth/confirm_user'
 import UserConfirmed from '../components/auth/user_confirmed'
+import Cart from '../components/cart'
+import Checkout from '../components/cart/checkout'
+import CheckoutConfirmation from '../components/cart/checkout_confirmation'
+import Product from '../components/products/product'
 import NotFound from '../components/not_found'
 import Unauthorized from '../components/auth/unauthorized'
 
@@ -36,6 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
             <Route exact path="/login" component={Login}/>
             <Route exact path="/confirm_user" component={ConfirmUser}/>
             <Route exact path="/user_confirmed" component={UserConfirmed}/>
+            <Route exact path="/cart" component={Cart}/>
+            <Route exact path="/checkout" component={Checkout}/>
+            <Route exact path="/confirmation/:orderId" component={CheckoutConfirmation}/>
+            <Route exact path="/products/:productId" component={Product}/>
             <Route exact path="/unauthorized" component={Unauthorized}/>
             <Route exact path="/404" component={NotFound}/>
             <Route component={NotFound} />

@@ -1,6 +1,13 @@
 import React from 'react'
+import ProductTile from '../products/product_tile'
+import { loadProducts } from '../../actions/product'
+import { connect } from 'react-redux'
 
 class Product extends React.Component {
+  componentDidMount() {
+    this.props.dispatch(loadProducts())
+  }
+
   render() {
     return (
       <section className="new-arrivals-products-area bg-gray section-padding-100">
@@ -13,6 +20,10 @@ class Product extends React.Component {
               </div>
             </div>
           </div>
+
+          {this.props.products.slice(0, 4).map(product => (
+            <ProductTile key={product.id} product={product} />
+          ))}
 
           <div className="row">
             <div className="col-12 col-sm-6 col-lg-3">
@@ -115,4 +126,11 @@ class Product extends React.Component {
   }
 }
 
-export default Product;
+const mapStateToProps = (state) => {
+  return {
+    currentUser: state.currentUser,
+    products: state.products
+  }
+}
+
+export default connect(mapStateToProps)(Product)

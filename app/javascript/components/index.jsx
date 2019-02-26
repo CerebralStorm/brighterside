@@ -3,20 +3,16 @@ import { Link } from 'react-router-dom'
 import Hero from './index/hero'
 import Service from './index/service'
 import About from './index/about'
-import Portfolio from './index/portfolio'
 import Testimonial from './index/testimonial'
 import Product from './index/product'
 import Blog from './index/blog'
 import Subscribe from './index/subscribe'
 import Contact from './index/contact'
-// import { loadProducts } from '../index/actions/product'
+import { loadProducts } from '../actions/product'
 import { connect } from 'react-redux'
-// import ProductTile from './index/products/product_tile'
+import ProductTile from './products/product_tile'
 
 class Index extends React.Component {
-  componentDidMount() {
-    // this.props.dispatch(loadProducts())
-  }
 
   render() {
     return (
@@ -24,9 +20,8 @@ class Index extends React.Component {
         <Hero />
         <Service />
         <About />
-        <Portfolio />
-        <Testimonial />
         <Product />
+        <Testimonial />
         <Blog />
         <Subscribe />
         <Contact />

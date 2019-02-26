@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   get '/login', to: 'static#index'
   get '/user_confirmed', to: 'static#index'
   get '/confirm_user', to: 'static#index'
+  get '/cart', to: 'static#index'
+  get '/checkout', to: 'static#index'
+  get '/products/:id', to: 'static#index'
 
   match "/404", :to => "static#index", :via => :all
 

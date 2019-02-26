@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from '../assets/images/1.png'
-// import { loadCart } from '../actions/cart'
+import { loadCart } from '../actions/cart'
 import { signOut } from '../actions/user'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
@@ -18,13 +18,12 @@ class Header extends React.Component {
   }
 
   cartCount() {
-    // let quantity = 0;
-    // if(this.props.cart && Object.keys(this.props.cart).length > 0){
-    //   Object.values(this.props.cart).forEach((item) => {
-    //     quantity += item.quantity
-    //   })
-    // }
-    return 1;
+    let quantity = 0;
+    if(this.props.cart && Object.keys(this.props.cart).length > 0){
+      Object.values(this.props.cart).forEach((item) => {
+        quantity += item.quantity
+      })
+    }
   }
 
   render() {
@@ -58,7 +57,7 @@ class Header extends React.Component {
                 <Link to={'/login'} className="nav-link">Login</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Cart</a>
+                <Link to={'/cart'} className="nav-link">Cart</Link>
               </li>
             </ul>
           </div>

@@ -1,6 +1,6 @@
 module Api
   module V1
-    class ChargesController < ApplicationController
+    class ChargesController < BaseController
 
       def create
         charge = StripeChargesServices.new(charges_params, current_user).call

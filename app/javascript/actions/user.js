@@ -1,15 +1,33 @@
 import { UserApi } from '../api/user_api'
-import { logAndDispatchError } from '../utils'
+import { logAndDispatchError, setHeaders } from '../utils'
 import constants from '../constants'
+
+var parseUser = function (response) {
+  return response.data.data || {};
+}
 
 var signUp = function (params = {}) {
   return function (dispatch) {
     return UserApi.loadProducts(params)
       .then(response => {
-        dispatch({ type: constants.LOAD_USER, user: response.data.data })
+        setHeaders(response)
+        dispatch({ type: constants.LOAD_USER, user: parseUser(response) })
       })
       .catch(error => {
         logAndDispatchError(dispatch, error, 'An error occurred while attempting to sign up.')
+      })
+  }
+}
+
+var currentUser =  function (params) {
+  return function (dispatch) {
+    return UserApi.currentUser(params)
+      .then(response => {
+        setHeaders(response)
+        dispatch({ type: constants.LOAD_USER, user: parseUser(response) })
+      })
+      .catch(error => {
+        logAndDispatchError(dispatch, error, 'An error occurred while attempting to get the current user.')
       })
   }
 }
@@ -18,7 +36,9 @@ var login =  function (params) {
   return function (dispatch) {
     return UserApi.login(params)
       .then(response => {
-        dispatch({ type: constants.LOAD_USER, user: response.data.data })
+        console.log(response)
+        setHeaders(response)
+        dispatch({ type: constants.LOAD_USER, user: parseUser(response) })
       })
       .catch(error => {
         logAndDispatchError(dispatch, error, 'An error occurred while attempting to login.')
@@ -30,6 +50,7 @@ var signOut =  function (params) {
   return function (dispatch) {
     return UserApi.signOut(params)
       .then(response => {
+        setHeaders(response)
         dispatch({ type: constants.CLEAR_USER })
       })
       .catch(error => {
@@ -38,4 +59,4 @@ var signOut =  function (params) {
   }
 }
 
-export { signUp, login, signOut };
+export { signUp, currentUser, login, signOut };

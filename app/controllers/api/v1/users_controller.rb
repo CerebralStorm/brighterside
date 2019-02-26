@@ -1,6 +1,11 @@
 module Api
   module V1
-    class UsersController < ApplicationController
+    class UsersController < BaseController
+
+      def show_current_user
+        render json: { data: current_user }, status: :ok
+      end
+
       def update
         # Not Safe
         @user = User.find(params[:id])

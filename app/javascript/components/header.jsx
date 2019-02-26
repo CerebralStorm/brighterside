@@ -4,7 +4,8 @@ import logo from '../assets/images/1.png'
 import { signOut } from '../actions/user'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { currentUser } from '../actions/user'
+import Cookies from 'js-cookie';
 
 class Header extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class Header extends React.Component {
   }
 
   componentDidMount() {
-    // this.props.dispatch(loadCart())
+    this.props.dispatch(currentUser())
   }
 
   cartCount() {
@@ -27,6 +28,11 @@ class Header extends React.Component {
   }
 
   render() {
+    console.log('access-token:', Cookies.get('access-token'))
+    console.log('uid:', Cookies.get('uid'))
+    console.log('client:', Cookies.get('client'))
+    console.log('expiry:', Cookies.get('expiry'))
+
     return (
       <header>
         <nav id='main-navbar' className="navbar fixed-top navbar-expand-lg justify-content-between navbar-light bg-light">
@@ -42,7 +48,7 @@ class Header extends React.Component {
             <ul className='navbar-nav ml-auto mt-2'>
               {this.props.currentUser.id &&
                 <li className="nav-item">
-                  <a className="nav-link" onClick={(e) => { this.props.dispatch(signOut()) }} >Sign out</a>
+                  <a href='#' className="nav-link" onClick={(e) => { this.props.dispatch(signOut()) }} >Sign out</a>
                 </li>
               }
               <li className="nav-item">

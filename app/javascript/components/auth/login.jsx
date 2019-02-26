@@ -23,9 +23,8 @@ class Login extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     if (this.props.currentUser.id) {
-      return <Redirect to="/" />
+      // return <Redirect to="/" />
     }
     return (
       <div className='container'>

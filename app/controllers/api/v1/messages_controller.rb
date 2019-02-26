@@ -1,6 +1,6 @@
 module Api
   module V1
-    class MessagesController < ApplicationController
+    class MessagesController < BaseController
 
       def create
         @message = Message.new(message_params)

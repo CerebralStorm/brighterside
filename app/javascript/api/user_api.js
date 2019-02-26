@@ -20,7 +20,7 @@ class UserApi {
 
   static signOut(params = {}) {
     console.log(axiosHeaders())
-    return axios.delete('/api/v1/auth/sign_out', { data: snakeCase(params) }, axiosHeaders())
+    return axios.delete('/api/v1/auth/sign_out', axiosHeaders())
   }
 }
 

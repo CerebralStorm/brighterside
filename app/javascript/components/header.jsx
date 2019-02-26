@@ -29,12 +29,6 @@ class Header extends React.Component {
   }
 
   render() {
-    console.log('access-token:', Cookies.get('access-token'))
-    console.log('uid:', Cookies.get('uid'))
-    console.log('client:', Cookies.get('client'))
-    console.log('expiry:', Cookies.get('expiry'))
-    console.log(this.props.cart)
-
     return (
       <header>
         <nav id='main-navbar' className="navbar fixed-top navbar-expand-lg justify-content-between navbar-light bg-light">

@@ -13,10 +13,28 @@ const logAndDispatchError = function(dispatch, error, message) {
 }
 
 const setHeaders = function(response) {
+  console.log('||||||||||Prevous Value||||||||||')
+  console.log('access-token:', Cookies.get('access-token'))
+  console.log('uid:', Cookies.get('uid'))
+  console.log('client:', Cookies.get('client'))
+  console.log('expiry:', Cookies.get('expiry'))
+
+  console.log('||||||||||New Value||||||||||')
+  console.log('access-token', response.headers['access-token'])
+  console.log('uid', response.headers['uid'])
+  console.log('client', response.headers['client'])
+  console.log('expiry', response.headers['expiry'])
+
   Cookies.set('uid', response.headers['uid'])
   Cookies.set('client', response.headers['client'])
   Cookies.set('access-token', response.headers['access-token'])
   Cookies.set('expiry', response.headers['expiry'])
+
+  console.log('||||||||||Saved Value||||||||||')
+  console.log('access-token:', Cookies.get('access-token'))
+  console.log('uid:', Cookies.get('uid'))
+  console.log('client:', Cookies.get('client'))
+  console.log('expiry:', Cookies.get('expiry'))
 }
 
 const axiosHeaders = function(response) {

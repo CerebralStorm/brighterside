@@ -1,9 +1,44 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import MessageApi from '../../api/message_api'
+import { showFlashMessage } from '../../actions/flash'
 
 class Contact extends React.Component {
+  constructor(props) {
+    super(props);
+    this.submitMessage = this.submitMessage.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.state = {
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    }
+  }
+
+  handleChange(event) {
+    let state = this.state
+    state[event.target.name] = event.target.value
+    this.setState(state)
+  }
+
+  submitMessage(event) {
+    event.preventDefault()
+    MessageApi.createMessage({message: this.state}).then(() => {
+      this.props.dispatch(showFlashMessage('Thank you for your message', 'success'))
+      this.setState({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      })
+      window.scrollTo(0, 0)
+    })
+  }
+
   render() {
     return (
-      <section className="contact-area section-padding-100-0">
+      <section id='contact' className="contact-area m-4 section-padding-100-0">
         <div className="container">
           <div className="row align-items-center justify-content-between">
             <div className="col-12 col-lg-5">
@@ -16,26 +51,26 @@ class Contact extends React.Component {
                   <div className="row">
                     <div className="col-12 col-sm-6">
                       <div className="form-group">
-                        <input type="text" className="form-control" id="contact-name" placeholder="Your Name" />
+                        <input name="name" type="text" onChange={this.handleChange} value={this.state.name} className="form-control" id="contact-name" placeholder="Your Name" />
                       </div>
                     </div>
                     <div className="col-12 col-sm-6">
                       <div className="form-group">
-                        <input type="email" className="form-control" id="contact-email" placeholder="Your Email" />
+                        <input name="email" type="email" onChange={this.handleChange} value={this.state.email} className="form-control" id="contact-email" placeholder="Your Email" />
                       </div>
                     </div>
                     <div className="col-12">
                       <div className="form-group">
-                        <input type="text" className="form-control" id="contact-subject" placeholder="Subject" />
+                        <input name="subject" type="text" onChange={this.handleChange} value={this.state.subject} className="form-control" id="contact-subject" placeholder="Subject" />
                       </div>
                     </div>
                     <div className="col-12">
                       <div className="form-group">
-                        <textarea className="form-control" name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                        <textarea name="message" onChange={this.handleChange} value={this.state.message} className="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
                       </div>
                     </div>
                     <div className="col-12">
-                      <button type="submit" className="btn alazea-btn mt-15">Send Message</button>
+                      <button type="submit" onClick={this.submitMessage} className="btn btn-primary mt-15">Send Message</button>
                     </div>
                   </div>
                 </form>
@@ -54,4 +89,11 @@ class Contact extends React.Component {
   }
 }
 
-export default Contact;
+const mapStateToProps = (state) => {
+  return {
+    currentUser: state.currentUser,
+    flash: state.flash
+  }
+}
+
+export default connect(mapStateToProps)(Contact)

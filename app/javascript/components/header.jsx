@@ -11,6 +11,7 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.cartCount = this.cartCount.bind(this)
+    this.handleScrollToElement = this.handleScrollToElement.bind(this)
   }
 
   componentDidMount() {
@@ -67,16 +68,16 @@ class Header extends React.Component {
             <div className="collapse navbar-collapse" id="navbar-links">
               <ul className="navbar-nav ml-auto ml-auto">
                 <li className="nav-item mr-4">
-                  <a className="nav-link" href="#">Products</a>
+                  <Link to={'/'} className="nav-link">Home</Link>
                 </li>
                 <li className="nav-item mr-4">
-                  <a className="nav-link" href="#">About</a>
+                  <Link to={'/shop'} className="nav-link">Shop</Link>
                 </li>
                 <li className="nav-item mr-4">
-                  <a className="nav-link" href="#">Blog</a>
+                  <Link to={'/contact'} className="nav-link">Contact Us</Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">Contact</a>
+                  <a className="nav-link" href="#">FAQ</a>
                 </li>
               </ul>
             </div>

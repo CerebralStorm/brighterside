@@ -17,6 +17,7 @@ module Api
         params.require(:message).permit(
           :name,
           :email,
+          :subject,
           :message
         )
       end

@@ -17,6 +17,7 @@ import '../assets/stylesheets/magnific-popup.css';
 import 'bootstrap/dist/js/bootstrap';
 
 import App from '../components/app'
+import Account from '../components/account'
 import Index from '../components/index'
 import SignUp from '../components/auth/sign_up'
 import Login from '../components/auth/login'
@@ -26,6 +27,7 @@ import Cart from '../components/cart'
 import Shop from '../components/shop'
 import Faq from '../components/faq'
 import Checkout from '../components/cart/checkout'
+import Order from '../components/order'
 import Contact from '../components/index/contact'
 import CheckoutConfirmation from '../components/cart/checkout_confirmation'
 import Product from '../components/products/product'
@@ -48,6 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <Route exact path="/checkout" component={Checkout}/>
             <Route exact path="/contact" component={Contact}/>
             <Route exact path="/faq" component={Faq}/>
+            <Route exact path="/account" component={Account}/>
+            <Route exact path="/orders/:orderId" component={Order}/>
             <Route exact path="/confirmation/:orderId" component={CheckoutConfirmation}/>
             <Route exact path="/products/:productId" component={Product}/>
             <Route exact path="/unauthorized" component={Unauthorized}/>

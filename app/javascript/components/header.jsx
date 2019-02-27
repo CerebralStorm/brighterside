@@ -44,15 +44,24 @@ class Header extends React.Component {
             <ul className='navbar-nav ml-auto mt-2'>
               {this.props.currentUser.id &&
                 <li className="nav-item">
+                  <Link to={'/account'} className="nav-link">My Account</Link>
+                </li>
+              }
+              {this.props.currentUser.id &&
+                <li className="nav-item">
                   <a href='#' className="nav-link" onClick={(e) => { this.props.dispatch(signOut()) }} >Sign out</a>
                 </li>
               }
-              <li className="nav-item">
-                <Link to={'/sign_up'} className="nav-link">Sign Up</Link>
-              </li>
-              <li className="nav-item">
-                <Link to={'/login'} className="nav-link">Login</Link>
-              </li>
+              {!this.props.currentUser.id &&
+                <li className="nav-item">
+                  <Link to={'/sign_up'} className="nav-link">Sign Up</Link>
+                </li>
+              }
+              {!this.props.currentUser.id &&
+                <li className="nav-item">
+                  <Link to={'/login'} className="nav-link">Login</Link>
+                </li>
+              }
               <li className="nav-item">
                 <Link to={'/cart'} className="nav-link">Cart ({this.cartCount()})</Link>
               </li>

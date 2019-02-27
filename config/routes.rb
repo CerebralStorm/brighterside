@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/user_confirmed', to: 'static#index'
   get '/confirm_user', to: 'static#index'
   get '/contact', to: 'static#index'
+  get '/account', to: 'static#index'
   get '/cart', to: 'static#index'
   get '/shop', to: 'static#index'
   get '/checkout', to: 'static#index'

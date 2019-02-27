@@ -11,7 +11,6 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.cartCount = this.cartCount.bind(this)
-    this.handleScrollToElement = this.handleScrollToElement.bind(this)
   }
 
   componentDidMount() {
@@ -77,7 +76,7 @@ class Header extends React.Component {
                   <Link to={'/contact'} className="nav-link">Contact Us</Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">FAQ</a>
+                  <Link to={'/faq'} className="nav-link">FAQ</Link>
                 </li>
               </ul>
             </div>
